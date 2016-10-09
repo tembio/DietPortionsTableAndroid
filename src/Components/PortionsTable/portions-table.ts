@@ -33,26 +33,21 @@ export class PortionsTable implements OnInit{
 		this.meals = this.dietTable? this.portionsTableService.getDietPortions() : this.portionsTableService.getRemainingPortions();
 	}
 
-	mouseDown(meal,portionType){
-		this.startMouseDown = (new Date()).getTime(); 	
-		this.timer = setTimeout(()=>{
-		    			meal.portions[portionType]+=1;
-						this.storeData();
-	    		}, PortionsTable.HOLD_TIME);
-	}	
+	tap(meal,portionType){
+		meal.portions[portionType]+=1;
+		this.storeData();
+	}
 
-	mouseUp(meal,portionType){
-        if(<number>(new Date().getTime()) - this.startMouseDown < PortionsTable.HOLD_TIME){
-		    clearTimeout(this.timer);
-			if(meal.portions[portionType]>0){
+	press(meal,portionType){
+		if(meal.portions[portionType]>0){
 		    	if(portionType=="vegetables")
 		    	  meal.portions[portionType]=0;		
 		    	else
 			    	meal.portions[portionType]-=1;
 				this.storeData();
-			}
-        }
-	}	
+		}
+		this.storeData();
+	}
 
 	private storeData(){
 		if(this.dietTable)

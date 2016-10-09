@@ -11,5 +11,4 @@ export class DietPortions {
   constructor(public navCtrl: NavController) {
 
   }
-
 }

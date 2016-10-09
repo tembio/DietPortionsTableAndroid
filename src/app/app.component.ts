@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
-import { TabsPage } from '../pages/tabs/tabs';
+import { DietPortions } from '../pages/diet-portions/diet-portions';
+import { RemainingPortions } from '../pages/remaining-portions/remaining-portions';
 
 import { PortionsTableService } from '../Services/portions-table.service'; 
 
@@ -12,7 +13,7 @@ import { PortionsTableService } from '../Services/portions-table.service';
   providers: [PortionsTableService]
 })
 export class MyApp {
-  rootPage = TabsPage;
+  rootPage = RemainingPortions;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
