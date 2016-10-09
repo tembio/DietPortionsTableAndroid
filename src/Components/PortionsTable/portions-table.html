@@ -1,0 +1,37 @@
+ <table>
+ 	<tr>
+ 		<th class="rowHeader"></th>
+ 		<th *ngFor="let portion of portionLabels"  [class] ="portion.foodType">{{portion.label}}</th>
+ 	</tr>
+  <tr *ngFor="let meal of meals">
+        <td class="rowHeader">{{ meal.name }}</td>
+
+        <td class="protein"
+            (mousedown)="mouseDown(meal,'protein')" 
+            (mouseup)="mouseUp(meal,'protein')">{{ meal.portions.protein  | isNull }}</td>
+
+        <td class="proteinFat"
+            (mousedown)="mouseDown(meal,'proteinFat')" 
+            (mouseup)="mouseUp(meal,'proteinFat')">{{ meal.portions.proteinFat  | isNull }}</td>
+
+        <td class="fat"
+            (mousedown)="mouseDown(meal,'fat')" 
+            (mouseup)="mouseUp(meal,'fat')">{{ meal.portions.fat  | isNull }}</td>
+
+        <td class="carbs"
+            (mousedown)="mouseDown(meal,'carb')" 
+            (mouseup)="mouseUp(meal,'carb')">{{ meal.portions.carbs  | isNull }}</td>
+
+        <td class="dairy"
+            (mousedown)="mouseDown(meal,'dairy')" 
+            (mouseup)="mouseUp(meal,'dairy')">{{ meal.portions.dairy  | isNull }}</td>
+
+        <td class="fruit"
+            (mousedown)="mouseDown(meal,'fruit')" 
+            (mouseup)="mouseUp(meal,'fruit')">{{ meal.portions.fruit  | isNull }}</td>
+
+        <td class="vegetables"
+            (mousedown)="mouseDown(meal,'vegetables')" 
+            (mouseup)="mouseUp(meal,'vegetables')">{{ meal.portions.vegetables  | vegetables }}</td>
+  </tr>
+</table>
