@@ -13,10 +13,7 @@ export class PortionsTable implements OnInit{
 	meals : Meal[];
 	portionLabels : string[];
 	storageKey : string;
-
-	static HOLD_TIME : number = 500;
-	private startMouseDown : number;
-	private timer;
+	title : string;
 
 	constructor(private portionsTableService: PortionsTableService){}
 
@@ -31,14 +28,15 @@ export class PortionsTable implements OnInit{
 	    					  {foodType:'vegetables',label:'Verdura'}
 	    					 ];
 		this.meals = this.dietTable? this.portionsTableService.getDietPortions() : this.portionsTableService.getRemainingPortions();
+		this.title = this.dietTable? "Dieta":"Diario";
 	}
 
-	tap(meal,portionType){
+	press(meal,portionType){
 		meal.portions[portionType]+=1;
 		this.storeData();
 	}
 
-	press(meal,portionType){
+	tap(meal,portionType){
 		if(meal.portions[portionType]>0){
 		    	if(portionType=="vegetables")
 		    	  meal.portions[portionType]=0;		
