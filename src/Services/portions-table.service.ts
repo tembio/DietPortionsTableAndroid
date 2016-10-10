@@ -33,7 +33,7 @@ export class PortionsTableService{
 		let storedDietMeals : Meal[] = JSON.parse(localStorage.getItem(PortionsTableService.dietPortionsStorageKey));  
 
 		if(!storedDietMeals)
-			return [new Meal("Desayuno"),new Meal("Comida"),new Meal("Cena"),new Meal("Postentreno"),new Meal("Cualquier hora")];
+			return [new Meal("Desayuno"),new Meal("Comida"),new Meal("Cena"),new Meal("Postentreno"),new Meal("Extra")];
 		
 		storedDietMeals.map( x => dietMeals.push(new Meal(x.name, x.portions)) );
 

@@ -11,7 +11,7 @@ export class PortionsTable implements OnInit{
 
 	@Input() dietTable;
 	meals : Meal[];
-	portionLabels : string[];
+	portionLabels: any;
 	storageKey : string;
 	title : string;
 
