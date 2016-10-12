@@ -15,6 +15,6 @@ export class DietPortions {
   }
 
   goToRemainingPortions(){
-  	this.navCtrl.push(RemainingPortions);
+  	this.navCtrl.setRoot(RemainingPortions);
   }
 }

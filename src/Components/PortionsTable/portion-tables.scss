@@ -1,10 +1,14 @@
 table{
 	width:100%;
-	height:1005;
+	height:100%;
+}
+
+.dietTable{
+	background-color: #e4dfec;
 }
 
 td,th{
-	padding:15px;
+	padding: 15px;
 }
 
 th{
@@ -30,6 +34,7 @@ tr{
 }
 
 td{
+	font-size: 1.3em;
 	border: none;
 	text-align:center;
 	width:13%;
@@ -37,6 +42,7 @@ td{
 }
 
 td.rowHeader{
+	font-size: 1em;
 	text-align:left;
 	width: 9%;
 	background-color: #e4dfec;

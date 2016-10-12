@@ -3,7 +3,7 @@
  		<th class="rowHeader">{{title}}</th>
  		<th *ngFor="let portion of portionLabels"  [class] ="portion.foodType">{{portion.label}}</th>
  	</tr>
-  <tr *ngFor="let meal of meals">
+  <tr *ngFor="let meal of meals" [class.dietTable]="dietTable">
         <td class="rowHeader">{{ meal.name }}</td>
 
         <td class="protein" 

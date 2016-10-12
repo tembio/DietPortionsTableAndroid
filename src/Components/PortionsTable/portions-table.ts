@@ -9,7 +9,7 @@ import { PortionsTableService } from '../../Services/portions-table.service';
 })
 export class PortionsTable implements OnInit{
 
-	@Input() dietTable;
+	@Input() dietTable : boolean;
 	meals : Meal[];
 	portionLabels: any;
 	storageKey : string;

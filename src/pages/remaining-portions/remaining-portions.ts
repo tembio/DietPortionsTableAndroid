@@ -15,7 +15,7 @@ export class RemainingPortions {
   }
 
   goToDiet() {
-    this.navCtrl.push(DietPortions);
+    this.navCtrl.setRoot(DietPortions);
   }
 
 }
