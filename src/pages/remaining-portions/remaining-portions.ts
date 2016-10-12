@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 
 import { DietPortions } from '../diet-portions/diet-portions';
+import { Options } from '../options/options'
 
 @Component({
   selector: 'remaining-portions',
@@ -10,12 +11,14 @@ import { DietPortions } from '../diet-portions/diet-portions';
 })
 export class RemainingPortions {
 
-  constructor(public navCtrl: NavController) {
-
-  }
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {}
 
   goToDiet() {
     this.navCtrl.setRoot(DietPortions);
+  }
+
+  openOptions(){
+  	this.modalCtrl.create(Options).present();
   }
 
 }

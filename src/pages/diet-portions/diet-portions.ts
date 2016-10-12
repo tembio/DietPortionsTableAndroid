@@ -10,11 +10,10 @@ import { RemainingPortions } from '../remaining-portions/remaining-portions'
 })
 export class DietPortions {
 
-  constructor(public navCtrl: NavController) {
-
-  }
+  constructor(public navCtrl: NavController) {}
 
   goToRemainingPortions(){
   	this.navCtrl.setRoot(RemainingPortions);
   }
+
 }

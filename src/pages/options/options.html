@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Opciones
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+	  <ion-item>
+      <ion-label> Reiniciar porciones cada día </ion-label>
+      <ion-toggle [checked]="restartPortions" (ionChange)="saveOptions()"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

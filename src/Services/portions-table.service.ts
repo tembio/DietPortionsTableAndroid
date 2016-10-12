@@ -1,18 +1,22 @@
 import { Meal } from '../Components/PortionsTable/Meal';
 import { Injectable } from '@angular/core';
 
+export interface Options{
+  restartPortions : boolean;
+}
 
 @Injectable()
 export class PortionsTableService{
 
 	static remainingPortionsStorageKey = "remainingPortionsTableStorage";
 	static dietPortionsStorageKey = "dietPortionsTableStorage";
+	static optionsKey = "PortionsTableOptionsStorage";
 
 	getRemainingPortions() : Meal[]{
 
 		let remainingPortions : Meal[] = []; 
 
-		if(this.isNewDay())
+		if(this.isNewDay() && this.getOptions().restartPortions)
 			return this.getDietPortions();
 
 		let storedRemainingMeals = JSON.parse(localStorage.getItem(PortionsTableService.remainingPortionsStorageKey));  
@@ -44,9 +48,20 @@ export class PortionsTableService{
 		localStorage.setItem(PortionsTableService.dietPortionsStorageKey, JSON.stringify(meals));
 	}
 
+	setOptions(options : Options) : void{
+		console.log(JSON.stringify(options));
+		localStorage.setItem(PortionsTableService.optionsKey, JSON.stringify(options));
+	}
+
+	getOptions() : Options{
+		let options = localStorage.getItem(PortionsTableService.optionsKey);
+		return options? JSON.parse(options) : {restartPortions:true};
+	}
+
 	private isNewDay() : boolean{
 		let lastDay = localStorage.getItem('lastDay');
 		let today = ((new Date()).getDay()).toString();
+
 
 		if(!lastDay){
 			localStorage.setItem('lastDay', today);
