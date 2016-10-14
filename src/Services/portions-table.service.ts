@@ -54,7 +54,7 @@ export class PortionsTableService{
 	}
 
 	restartPortions() : void{
-      setRemainingPortions(getDietPortions());
+      this.setRemainingPortions(this.getDietPortions());
 	}
 
 	getOptions() : Options{

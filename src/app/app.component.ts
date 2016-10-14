@@ -14,13 +14,13 @@ import { PortionsTableService } from '../Services/portions-table.service';
 export class MyApp {
   rootPage = RemainingPortions;
 
-  constructor(platform: Platform) {
+  constructor(platform: Platform, public portionsTableService: PortionsTableService ) {
     platform.ready().then(() => {
       StatusBar.styleDefault();
     });
 
-    platform.resume = () => {
+    platform.resume.subscribe(() => {
       this.portionsTableService.setRemainingPortions(this.portionsTableService.getRemainingPortions());
-    };
+    });
   }
 }
