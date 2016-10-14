@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { ViewController, ToastController } from 'ionic-angular';
+import { ViewController, NavController, ToastController, Events } from 'ionic-angular';
 import { PortionsTableService } from '../../Services/portions-table.service'; 
-
 
 @Component({
   templateUrl: 'options.html',
@@ -11,7 +10,7 @@ export class Options {
 
   restartPortions : boolean;
 
-  constructor(public viewCtrl: ViewController, public toastCtrl: ToastController,private portionsTableService: PortionsTableService) {
+  constructor(public viewCtrl: ViewController,public navCtrl: NavController, public toastCtrl: ToastController, public events: Events, private portionsTableService: PortionsTableService) {
   	this.restartPortions = this.portionsTableService.getOptions().restartPortions;
   }
 
@@ -25,10 +24,14 @@ export class Options {
 
     let doneMessage = this.toastCtrl.create({
       message: 'Porciones reiniciadas',
-      duration: 1500
+      duration: 1500,
     });
 
     doneMessage.present();
+
+    this.events.publish('refreshPortions');
+    
+    this.viewCtrl.dismiss();
   }
 
 }

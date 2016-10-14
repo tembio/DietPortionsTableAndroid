@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Meal } from './Meal';
 import { PortionsTableService } from '../../Services/portions-table.service'; 
+import { Events } from 'ionic-angular';
 
 
 @Component({
@@ -15,7 +16,11 @@ export class PortionsTable implements OnInit{
 	storageKey : string;
 	title : string;
 
-	constructor(private portionsTableService: PortionsTableService){}
+	constructor(private portionsTableService: PortionsTableService, public events: Events){
+		events.subscribe('refreshPortions', () => {
+	      this.ngOnInit();
+		});
+	}
 
 	ngOnInit(){
 	    this.portionLabels = [

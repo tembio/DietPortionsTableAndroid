@@ -22,5 +22,6 @@ export class MyApp {
     platform.resume.subscribe(() => {
       this.portionsTableService.setRemainingPortions(this.portionsTableService.getRemainingPortions());
     });
+    
   }
 }

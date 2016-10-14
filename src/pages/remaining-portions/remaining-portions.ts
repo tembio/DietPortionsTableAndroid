@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
 import { NavController, ModalController } from 'ionic-angular';
-
 import { DietPortions } from '../diet-portions/diet-portions';
 import { Options } from '../options/options'
 
