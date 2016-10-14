@@ -1,4 +1,4 @@
- <table>
+ <table [class.dietTable]="dietTable">
  	<tr>
  		<th class="rowHeader">{{title}}</th>
  		<th *ngFor="let portion of portionLabels"  [class] ="portion.foodType">{{portion.label}}</th>

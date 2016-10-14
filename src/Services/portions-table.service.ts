@@ -53,6 +53,11 @@ export class PortionsTableService{
 		localStorage.setItem(PortionsTableService.optionsKey, JSON.stringify(options));
 	}
 
+	restartPortions() : void{
+	  let dietPortions = this.portionsTableService.getDietPortions();
+      this.portionsTableService.setRemainingPortions(dietPortions);
+	}
+
 	getOptions() : Options{
 		let options = localStorage.getItem(PortionsTableService.optionsKey);
 		return options? JSON.parse(options) : {restartPortions:true};
