@@ -18,5 +18,9 @@ export class MyApp {
     platform.ready().then(() => {
       StatusBar.styleDefault();
     });
+
+    platform.resume = () => {
+      this.portionsTableService.setRemainingPortions(this.portionsTableService.getRemainingPortions());
+    };
   }
 }
