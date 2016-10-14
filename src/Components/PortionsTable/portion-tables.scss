@@ -1,6 +1,8 @@
 table{
 	width:100%;
 	height:100%;
+	border-collapse: separate;
+	border-spacing: 3px; 
 }
 
 .dietTable{
@@ -8,7 +10,7 @@ table{
 }
 
 td,th{
-	padding: 15px;
+	padding: 9px;
 }
 
 th{
