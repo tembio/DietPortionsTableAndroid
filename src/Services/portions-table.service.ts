@@ -16,8 +16,10 @@ export class PortionsTableService{
 
 		let remainingPortions : Meal[] = []; 
 
-		if(this.isNewDay() && this.getOptions().restartPortions)
+		if(this.isNewDay() && this.getOptions().restartPortions){
+			this.restartPortions();
 			return this.getDietPortions();
+		}
 
 		let storedRemainingMeals = JSON.parse(localStorage.getItem(PortionsTableService.remainingPortionsStorageKey));  
 
@@ -54,7 +56,7 @@ export class PortionsTableService{
 	}
 
 	restartPortions() : void{
-      this.setRemainingPortions(this.getDietPortions());
+      		this.setRemainingPortions(this.getDietPortions());
 	}
 
 	getOptions() : Options{
