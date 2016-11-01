@@ -3,8 +3,9 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
 import { RemainingPortions } from '../pages/remaining-portions/remaining-portions';
-
 import { PortionsTableService } from '../Services/portions-table.service'; 
+import { Intro } from '../pages/intro/intro';
+
 
 
 @Component({
@@ -12,9 +13,14 @@ import { PortionsTableService } from '../Services/portions-table.service';
   providers: [PortionsTableService]
 })
 export class MyApp {
-  rootPage = RemainingPortions;
 
   constructor(platform: Platform, public portionsTableService: PortionsTableService ) {
+    if( localStorage.getItem("tutorialDone") !== "true"){
+      this.rootPage = Intro;
+      localStorage.setItem("tutorialDone","true");
+    }else
+      this.rootPage = RemainingPortions;
+
     platform.ready().then(() => {
       StatusBar.styleDefault();
     });

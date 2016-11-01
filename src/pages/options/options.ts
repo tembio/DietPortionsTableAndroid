@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewController, NavController, ToastController, Events } from 'ionic-angular';
 import { PortionsTableService } from '../../Services/portions-table.service'; 
+import { Intro } from '../intro/intro'; 
 
 @Component({
   templateUrl: 'options.html',
@@ -32,6 +33,10 @@ export class Options {
     this.events.publish('refreshPortions');
     
     this.viewCtrl.dismiss();
+  }
+
+  goToIntro(){
+    this.navCtrl.push(Intro);
   }
 
 }

@@ -1,0 +1,28 @@
+<ion-content>
+
+  <ion-toolbar>
+        <ion-title>Dieta Sostenible</ion-title>
+        <ion-buttons end>
+          <button ion-button (click)="goToDiet()">Saltar introducción</button>
+        </ion-buttons>
+  </ion-toolbar>
+
+  <ion-slides pager>
+
+    <ion-slide *ngFor="let slide of slides">
+      <img [class.double-width]="slide.doubleWidthImage" *ngIf="slide.image" [src]="slide.image" class="slide-image"/>
+      <h2 [class.vertical-align]="!slide.image" class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+
+    <ion-slide>
+      <h2 class="slide-title vertical-align">¡Listo para empezar!</h2>
+      <button ion-button large clear icon-right (click)="goToDiet()">
+        Comenzar
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
