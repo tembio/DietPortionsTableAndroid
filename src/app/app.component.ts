@@ -14,6 +14,8 @@ import { Intro } from '../pages/intro/intro';
 })
 export class MyApp {
 
+  rootPage; 
+
   constructor(platform: Platform, public portionsTableService: PortionsTableService ) {
     if( localStorage.getItem("tutorialDone") !== "true"){
       this.rootPage = Intro;

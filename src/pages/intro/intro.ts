@@ -13,7 +13,7 @@ export class Intro {
   slides = [
     {
       title: "¡Bienvenido!",
-      description: 'Esta aplicación te ayudará a llevar la cuenta de porciones diarias de la Dieta Sostenble.<br/>Hay dos tipos de tablas: <span class="dieta">tabla dieta</span> y <span class="diario">tabla diario</span>',
+      description: 'Esta aplicación te ayudará a llevar la cuenta de porciones diarias de la Dieta Sostenble.<br/>Hay dos tipos de tablas: <span class="diario">tabla diario</span> y <span class="dieta">tabla dieta</span>',
       image: "assets/DosTablas.png",
       doubleWidthImage: true
     },

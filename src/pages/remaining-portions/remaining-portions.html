@@ -1,12 +1,13 @@
 
 <ion-content>
-  <portions-table></portions-table>
+	<portions-table></portions-table>
+
+	<ion-fab bottom right #fab>
+	   <button ion-fab><ion-icon name="add" item-left></ion-icon></button>
+	   <ion-fab-list side="top">
+	     <button ion-fab (click)="goToDiet()">Dieta</button>
+	     <button ion-fab (click)="openOptions()"><ion-icon name="settings" item-left></ion-icon></button>
+	   </ion-fab-list>
+	</ion-fab>
 </ion-content>
 
- <ion-fab bottom right>
-   <button ion-fab><ion-icon name="add" item-left></ion-icon></button>
-   <ion-fab-list side="top">
-     <button ion-fab (click)="goToDiet()">Dieta</button>
-     <button ion-fab (click)="openOptions()"><ion-icon name="settings" item-left></ion-icon></button>
-   </ion-fab-list>
- </ion-fab>
