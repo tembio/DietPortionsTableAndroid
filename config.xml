@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.portionstable521841" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>PortionsTable</name>
-  <description>An awesome Ionic/Cordova app.</description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+  <name>Dieta Sostenible</name>
+  <description>Mantén la cuenta de las porciones diarias de la Dieta Sostenible de Fisiomorfosis</description>
+  <author email="tembio@gmail.com" href="https://github.com/tembio">Diego Guerrero Moral</author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
