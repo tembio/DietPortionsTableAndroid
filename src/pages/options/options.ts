@@ -36,7 +36,7 @@ export class Options {
   }
 
   goToIntro(){
-    this.navCtrl.push(Intro);
+    this.navCtrl.setRoot(Intro);
   }
 
 }
